@@ -1,9 +1,10 @@
+# ai_agent.py
 from groq import Groq
+from .prompts import system_prompt
+import json
 
-key = "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"
-
-#Anlyze the given code(fetched) using LLM model from Groq
 def analyze_code_with_llm(file_content, file_name):
+    """Analyzes the given code using an LLM."""
     prompt = f"""
     Analyze the following code for:
     - Code style and formatting issues
@@ -12,12 +13,12 @@ def analyze_code_with_llm(file_content, file_name):
     - Best practices
 
     File: {file_name}
-    Content: {file_content}
+    Content:
+    {file_content}
 
-    Provide a detailed JSON output with the following structure:
+    Provide a detailed JSON output with the structure:
     {{
-        "Issues": 
-        [
+        "issues": [
             {{
                 "type": "<style|bug|performance|best_practice>",
                 "line": <line_number>,
@@ -26,16 +27,15 @@ def analyze_code_with_llm(file_content, file_name):
             }}
         ]
     }}
-    ```json
+    ``json
     """
 
     client = Groq(
-        api_key= key
+        api_key="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"
     )
     completion = client.chat.completions.create(
         model="llama3-8b-8192",
-        messages=
-        [
+        messages=[
             {'role': 'system', 'content': system_prompt},
             {
                 "role": "user",
@@ -47,12 +47,5 @@ def analyze_code_with_llm(file_content, file_name):
         response_format={
             "type": "json_object"
         },
-
-
     )
-    print(completion.choices[0].message.content)
-    result_content = ""
-    # for chunk in completion:
-    #     result_content += chunk.choices[0].delta.content or ""
     return completion.choices[0].message.content
-

@@ -5,7 +5,7 @@ from rest_framework.response import Response
 from .task import analyse_repo_task
 from celery.result import AsyncResult
 
-@api_view('POST')
+@api_view(['POST'])
 def start_task(request):
     data = request.data
     repo_url = data.get('repo_url')
@@ -18,12 +18,13 @@ def start_task(request):
         "status" : "Task Started"
     })
 
-@api_view('GET')
+@api_view(['GET'])
 def task_status_view(request, task_id):
     result = AsyncResult(task_id)
     response = {
         "task_id" : task_id,
-        "status" : result.state
+        "status" : result.state,
+        "result" : result.result
     }
 
     return Response(response)

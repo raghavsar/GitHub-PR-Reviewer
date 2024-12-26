@@ -20,6 +20,6 @@ from home.views import start_task, task_status_view
 
 urlpatterns = [
     path('start_task/', start_task,),
-    path('task_view_status/<task_id>', task_status_view,),
+    path('task_status/<str:task_id>/', task_status_view, ),
     path('admin/', admin.site.urls)
 ]
