@@ -154,7 +154,7 @@ Get the status and results of the review:
 }
 ```
 
-![Task Status Response](Images\post_start.jpg)
+![Task Status Response](Images/post_start.png)
 
 ## Example Analysis Results
 
