@@ -116,7 +116,7 @@ Send a POST request to initiate the code review:
 }
 ```
 
-![Start Task Request](Images/get_status.png)
+![Start Task Request](Images/post_start.png)
 
 ### 2. Checking Review Status
 Get the status and results of the review:
@@ -154,7 +154,7 @@ Get the status and results of the review:
 }
 ```
 
-![Task Status Response](Images/post_start.png)
+![Task Status Response](Images/get_status.png)
 
 ## Example Analysis Results
 
