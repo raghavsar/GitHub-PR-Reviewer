@@ -1,0 +1,120 @@
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36" version="25.0.3">
+  <diagram name="Page-1" id="2YBvvXClWsGukQMizWep">
+    <mxGraphModel dx="1112" dy="525" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1.75" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="ndaThMweI111H52IAXxs-91" value="" style="group;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;locked=0;connectable=1;" vertex="1" connectable="0" parent="1">
+          <mxGeometry x="30" y="590" width="1350" height="840" as="geometry" />
+        </mxCell>
+        <mxCell id="ndaThMweI111H52IAXxs-72" value="Client" style="whiteSpace=wrap;strokeWidth=2;" vertex="1" parent="ndaThMweI111H52IAXxs-91">
+          <mxGeometry x="891.3798819124424" y="-56.451612903225815" width="280.34274193548384" height="86.89655172413794" as="geometry" />
+        </mxCell>
+        <mxCell id="ndaThMweI111H52IAXxs-73" value="FastAPI Server" style="whiteSpace=wrap;strokeWidth=2;" vertex="1" parent="ndaThMweI111H52IAXxs-91">
+          <mxGeometry x="808.3669354838711" y="184.65517241379314" width="443.64919354838713" height="86.89655172413794" as="geometry" />
+        </mxCell>
+        <mxCell id="ndaThMweI111H52IAXxs-74" value="Django REST Framework" style="whiteSpace=wrap;strokeWidth=2;" vertex="1" parent="ndaThMweI111H52IAXxs-91">
+          <mxGeometry x="713.1048387096776" y="371.12068965517244" width="636.8951612903227" height="86.89655172413794" as="geometry" />
+        </mxCell>
+        <mxCell id="ndaThMweI111H52IAXxs-75" value="Celery Worker" style="whiteSpace=wrap;strokeWidth=2;" vertex="1" parent="ndaThMweI111H52IAXxs-91">
+          <mxGeometry x="274.89919354838713" y="555.7758620689656" width="440.9274193548387" height="86.89655172413794" as="geometry" />
+        </mxCell>
+        <mxCell id="ndaThMweI111H52IAXxs-76" value="Redis" style="shape=cylinder3;boundedLbl=1;backgroundOutline=1;size=10;strokeWidth=2;whiteSpace=wrap;" vertex="1" parent="ndaThMweI111H52IAXxs-91">
+          <mxGeometry x="990.7258064516129" y="740.4310344827586" width="141.53225806451613" height="99.5689655172414" as="geometry" />
+        </mxCell>
+        <mxCell id="ndaThMweI111H52IAXxs-77" value="GitHub API" style="whiteSpace=wrap;strokeWidth=2;" vertex="1" parent="ndaThMweI111H52IAXxs-91">
+          <mxGeometry y="747.6724137931035" width="372.883064516129" height="86.89655172413794" as="geometry" />
+        </mxCell>
+        <mxCell id="ndaThMweI111H52IAXxs-78" value="Groq LLM" style="whiteSpace=wrap;strokeWidth=2;" vertex="1" parent="ndaThMweI111H52IAXxs-91">
+          <mxGeometry x="508.9717741935484" y="747.6724137931035" width="345.6653225806452" height="86.89655172413794" as="geometry" />
+        </mxCell>
+        <mxCell id="ndaThMweI111H52IAXxs-79" value="1. POST request" style="curved=1;startArrow=none;endArrow=block;exitX=0.44;exitY=1.01;entryX=0.47;entryY=0.01;rounded=0;" edge="1" parent="ndaThMweI111H52IAXxs-91" source="ndaThMweI111H52IAXxs-72" target="ndaThMweI111H52IAXxs-73">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="928.125" y="124.19354838709678" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ndaThMweI111H52IAXxs-80" value="2. Forward request" style="curved=1;startArrow=none;endArrow=block;exitX=0.47;exitY=1.01;entryX=0.48;entryY=-0.01;rounded=0;" edge="1" parent="ndaThMweI111H52IAXxs-91" source="ndaThMweI111H52IAXxs-73" target="ndaThMweI111H52IAXxs-74">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="998.891129032258" y="322.2413793103448" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ndaThMweI111H52IAXxs-81" value="3. Create task" style="curved=1;startArrow=none;endArrow=block;exitX=0.1;exitY=1;entryX=0.5;entryY=0;rounded=0;" edge="1" parent="ndaThMweI111H52IAXxs-91" source="ndaThMweI111H52IAXxs-74" target="ndaThMweI111H52IAXxs-75">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="495.36290322580646" y="506.89655172413796" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ndaThMweI111H52IAXxs-82" value="4. Store task" style="curved=1;startArrow=none;endArrow=block;exitX=0.48;exitY=1;entryX=0.29;entryY=0;rounded=0;" edge="1" parent="ndaThMweI111H52IAXxs-91" source="ndaThMweI111H52IAXxs-74" target="ndaThMweI111H52IAXxs-76">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1004.334677419355" y="506.89655172413796" />
+              <mxPoint x="1004.334677419355" y="691.5517241379312" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ndaThMweI111H52IAXxs-83" value="5. Fetch PR data" style="curved=1;startArrow=none;endArrow=block;exitX=0.17;exitY=1;entryX=0.5;entryY=-0.01;rounded=0;" edge="1" parent="ndaThMweI111H52IAXxs-91" source="ndaThMweI111H52IAXxs-75" target="ndaThMweI111H52IAXxs-77">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="182.35887096774195" y="691.5517241379312" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ndaThMweI111H52IAXxs-84" value="6. Return PR data" style="curved=1;startArrow=none;endArrow=block;exitX=0.79;exitY=-0.01;entryX=0.43;entryY=1;rounded=0;" edge="1" parent="ndaThMweI111H52IAXxs-91" source="ndaThMweI111H52IAXxs-77" target="ndaThMweI111H52IAXxs-75">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="430.04032258064524" y="691.5517241379312" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ndaThMweI111H52IAXxs-85" value="7. Send for analysis" style="curved=1;startArrow=none;endArrow=block;exitX=0.5;exitY=1;entryX=0.26;entryY=-0.01;rounded=0;" edge="1" parent="ndaThMweI111H52IAXxs-91" source="ndaThMweI111H52IAXxs-75" target="ndaThMweI111H52IAXxs-78">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="495.36290322580646" y="691.5517241379312" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ndaThMweI111H52IAXxs-86" value="8. Return analysis" style="curved=1;startArrow=none;endArrow=block;exitX=0.7;exitY=-0.01;entryX=0.87;entryY=1;rounded=0;" edge="1" parent="ndaThMweI111H52IAXxs-91" source="ndaThMweI111H52IAXxs-78" target="ndaThMweI111H52IAXxs-75">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="841.0282258064517" y="691.5517241379312" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ndaThMweI111H52IAXxs-87" value="9. Update task" style="curved=1;startArrow=none;endArrow=block;exitX=1;exitY=0.91;entryX=0.51;entryY=0;rounded=0;" edge="1" parent="ndaThMweI111H52IAXxs-91" source="ndaThMweI111H52IAXxs-75" target="ndaThMweI111H52IAXxs-76">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1064.2137096774195" y="691.5517241379312" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ndaThMweI111H52IAXxs-88" value="10. Pull status" style="curved=1;startArrow=none;endArrow=block;exitX=0.55;exitY=1.01;entryX=0.54;entryY=0.01;rounded=0;" edge="1" parent="ndaThMweI111H52IAXxs-91" source="ndaThMweI111H52IAXxs-72" target="ndaThMweI111H52IAXxs-73">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1133.0357142857142" y="112.90322580645163" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ndaThMweI111H52IAXxs-89" value="11. Check status" style="curved=1;startArrow=none;endArrow=block;exitX=0.54;exitY=1.01;entryX=0.52;entryY=-0.01;rounded=0;" edge="1" parent="ndaThMweI111H52IAXxs-91" source="ndaThMweI111H52IAXxs-73" target="ndaThMweI111H52IAXxs-74">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1157.142857142857" y="327.4193548387097" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ndaThMweI111H52IAXxs-90" value="12. Fetch status" style="curved=1;startArrow=none;endArrow=block;exitX=0.57;exitY=1;entryX=0.72;entryY=0;rounded=0;" edge="1" parent="ndaThMweI111H52IAXxs-91" source="ndaThMweI111H52IAXxs-74" target="ndaThMweI111H52IAXxs-76">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1124.092741935484" y="506.89655172413796" />
+              <mxPoint x="1124.092741935484" y="691.5517241379312" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

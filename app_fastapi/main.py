@@ -17,7 +17,7 @@ class AnalyzePRRequest(BaseModel):
 @app.post("/start_task/")
 async def start_task_endpoint(task_request: AnalyzePRRequest):
     """
-    Trigger the task in Django and return the task ID.
+    It Triggers the task in Django and return the task ID.
     """
     async with httpx.AsyncClient() as client:
         response = await client.post(
@@ -38,7 +38,7 @@ async def start_task_endpoint(task_request: AnalyzePRRequest):
 @app.get("/task_status/{task_id}/")
 async def task_status_endpoint(task_id: str):
     """
-    Check the status of the task by making a request to Django.
+    to Check the status of the task by making a request to Django.
     """
     async with httpx.AsyncClient() as client:
         try:

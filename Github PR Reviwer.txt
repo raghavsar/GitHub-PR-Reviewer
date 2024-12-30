@@ -1,0 +1,44 @@
+I'll explain how this GitHub PR Reviewer system works based on the code you've shared. The system is designed to analyze pull requests using FastAPI as an API gateway, Django for task management, and an LLM for code analysis.
+
+Here's how the components work together:
+
+1. **FastAPI Application (main.py)**
+- Serves as the entry point for PR review requests
+- Has two endpoints:
+  - `/start_task/`: Accepts PR details and forwards them to Django
+  - `/task_status/{task_id}/`: Checks the status of ongoing analyses
+- Uses httpx for async communication with Django
+
+2. **Django Backend**
+- `urls.py`: Routes for starting tasks and checking status
+- `views.py`: Contains two key endpoints:
+  - `start_task()`: Initiates the Celery task for PR analysis
+  - `task_status_view()`: Returns the current status of a task
+
+3. **Celery Integration**
+- `celery.py`: Sets up Celery configuration for async task processing
+- `tasks.py`: Defines the main analysis task using `@shared_task`
+
+4. **Core Analysis Components**
+- `ai_agent.py`: 
+  - Uses Groq LLM (llama3-8b-8192 model)
+  - Analyzes code for style, bugs, performance, and best practices
+  - Returns structured JSON output
+
+- `github.py`:
+  - Handles GitHub API interactions
+  - Functions to:
+    - Parse repository URLs
+    - Fetch PR files
+    - Get file contents
+
+The workflow is:
+1. User sends PR details to FastAPI
+2. FastAPI forwards to Django
+3. Django creates a Celery task
+4. Celery worker:
+   - Fetches PR files from GitHub
+   - Sends code to LLM for analysis
+   - Returns structured feedback
+
+Would you like me to explain any specific component in more detail or show how to extend the functionality in any particular way?
