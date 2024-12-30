@@ -103,7 +103,7 @@ The system follows this workflow:
 ## API Testing Example with Postman
 
 ### 1. Starting a PR Review
-Send a POST request to initiate the code review:
+Send a POST request to initiate the code review, returns Task ID and Status:
 
 **Endpoint**: `POST http://127.0.0.1:8001/start_task/`
 
