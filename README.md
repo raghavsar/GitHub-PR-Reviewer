@@ -88,7 +88,7 @@ uvicorn app_fastapi.main:app --reload --port 8000
 
 ## System Architecture
 
-![System Architecture](path_to_architecture_diagram.png)
+![System Architecture](Images\GitHub Pr Reviewer Flow.jpg)
 
 The system follows this workflow:
 1. Client sends POST request to FastAPI Server
@@ -116,7 +116,7 @@ Send a POST request to initiate the code review:
 }
 ```
 
-![Start Task Request](Images\get_status.png)
+![Start Task Request](Images\get_status.jpg)
 
 ### 2. Checking Review Status
 Get the status and results of the review:
@@ -154,7 +154,7 @@ Get the status and results of the review:
 }
 ```
 
-![Task Status Response](Images\post_start.png)
+![Task Status Response](Images\post_start.jpg)
 
 ## Example Analysis Results
 
