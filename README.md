@@ -100,7 +100,7 @@ The system follows this workflow:
    - Updates task status in Redis
 5. Client can check task status through FastAPI
 
-## API Testing with Postman
+## API Testing Example with Postman
 
 ### 1. Starting a PR Review
 Send a POST request to initiate the code review:
