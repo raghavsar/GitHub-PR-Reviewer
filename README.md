@@ -1,6 +1,15 @@
-# GitHub-PR-Reviewer
+# GitHub-PR-Reviewer: Simplifying Code Reviews with Automation and Intelligence
 
 An automated code review system that analyzes pull requests using FastAPI, Django, and LLM (Groq). The system provides detailed feedback on code style, potential bugs, performance improvements, and best practices.
+- **LLM Integration**: The project utilizes advanced machine learning models to automatically analyze code for style issues, potential bugs, performance optimizations, and adherence to best practices. This makes it ideal for developers looking to streamline their workflows.
+
+- **FastAPI**: Acts as the API gateway, offering high-performance endpoints for initiating reviews, tracking progress, and retrieving results. Its lightweight and asynchronous nature ensures that the system can handle numerous requests efficiently.
+
+- **Django**: Serves as the backbone for managing tasks and storing data. Its robustness ensures reliable handling of complex workflows, such as fetching PR data from GitHub and orchestrating analysis tasks.
+
+- **Asynchronous Processing**: Leveraging Celery and Redis, the system processes PR reviews in the background, ensuring non-blocking operations and faster response times for users.
+
+GitHub-PR-Reviewer gives developers the flexibility to automate tedious parts of the review process, allowing them to focus on critical tasks, reduce errors, and scale their development operations effectively.
 
 ## Features
 
